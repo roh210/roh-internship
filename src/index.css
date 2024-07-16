@@ -10,3 +10,49 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
+
+/*CSS FOR SLICK SLIDER CAROUSEL*/
+
+.slick-slide > div {
+  margin-right: 10px; /*CREATED SPACING BETWEEN PICTURES*/
+}
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+  background-color: #fff;
+  border: 1px solid #ccc !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  z-index: 100;
+  transition: all 300ms ease;
+}
+
+.slick-arrow.slick-next {
+  right: 20px;
+}
+.slick-arrow.slick-prev {
+  left: 1px;
+}
+
+.slick-arrow.slick-next:hover,
+.slick-arrow.slick-prev:hover {
+  background-color: #fff;
+  scale: 1.1;
+  box-shadow: 5px 5px 5px lightgrey;
+}
+.slick-prev::before,
+.slick-next::before {
+  /*DISPLAY NONE OF THE ARROW PROVIDED BY SLICK SLIDER*/
+  display: none;
+}
+.arrows {
+  height: 15px; /*ARROW CLASSNAME FOR IMPORTED ARROW FROM FONTAWESOME*/
+  width: 10px;
+  margin: 1px;
+}
+
+
+
