@@ -12,12 +12,12 @@ const TopSellers = () => {
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
     );
     setSellers(data);
+    setLoading(false)
   }
 
   useEffect(() => {
     fetchSellers();
-    setTimeout(() => setLoading(false), 300);
-  });
+  },[]);
 
   return (
     <section id="section-popular" className="pb-5">
@@ -32,7 +32,7 @@ const TopSellers = () => {
           <div className="col-md-12">
             <ol className="author_list">
               {loading
-                ? new Array(sellers.length).fill(0).map((_, index) => (
+                ? new Array(12).fill(0).map((_, index) => (
                     <li key={index}>
                       <div className="author_list_pp">
                         <Link to={`/author/`}>
@@ -70,7 +70,7 @@ const TopSellers = () => {
                         <Link to={`/author/${seller.authorId}`}>
                           {seller.authorName}
                         </Link>
-                        <span>{seller.price}</span>
+                        <span>{seller.price} ETH</span>
                       </div>
                     </li>
                   ))}

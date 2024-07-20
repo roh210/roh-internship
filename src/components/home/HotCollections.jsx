@@ -16,12 +16,10 @@ const HotCollections = () => {
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections"
     );
     setUsers(data);
+    setLoading(false)
   }
   useEffect(() => {
     fetchUsers();
-    setTimeout(() => {
-      setLoading(false); 
-    }, 300);
   }, []);
 
   return (
