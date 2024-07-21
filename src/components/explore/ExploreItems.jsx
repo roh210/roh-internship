@@ -15,7 +15,9 @@ const ExploreItems = () => {
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore"
     );
     setItems(data);
-    setLoading(false);
+    setTimeout(()=>{
+      setLoading(false);
+    },600)
   }
 
   useEffect(() => {
