@@ -20,7 +20,9 @@ const Author = () => {
     );
     setAuthor(data);
     setItems(data.nftCollection);
-    setLoading(false);
+    setTimeout(()=>{
+      setLoading(false);
+    },600)
   }
 
   useEffect(() => {
