@@ -31,6 +31,7 @@ const ExploreItems = () => {
   };
 
   const filterItems = (event) => {
+    setLoading(true)
     const target = event.target.value;
     const sortedItems = [...items];
     if (target === "price_low_to_high") {
@@ -40,7 +41,10 @@ const ExploreItems = () => {
     } else if (target === "likes_high_to_low") {
       sortedItems.sort((a, b) => b.likes - a.likes);
     }
-    setItems(sortedItems);
+    setTimeout(()=>{
+      setLoading(false)
+      setItems(sortedItems);
+    },500)
   };
 
   return (
